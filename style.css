@@ -42,7 +42,7 @@ body {
 
 /* ========= TEXT SECTION ========= */
 .content-display {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   max-width: 800px;
 }
 
@@ -58,11 +58,10 @@ body {
 
 #menu-title {
   font-size: 3.5rem;
-  margin: 16px 0;
   font-weight: 700;
   color: #fff;
   line-height: 1.1;
-  background: linear-gradient(135deg, #fff 0%, #ffd700 100%);
+  background: linear-gradient(135deg, #ebfcca 0%, #3d8e2a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -161,7 +160,7 @@ body {
   height: 160px;
   border-radius: 20px;
   overflow: hidden;
-  border: 2px solid transparent;
+  border: 1px solid white;
   background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
@@ -204,7 +203,8 @@ body {
 .card.active {
   border-color: #ffcc00;
   transform: scale(1.05);
-  box-shadow: 0 12px 35px rgba(255, 204, 0, 0.4);
+  box-shadow: 0 6px 18px rgba(255, 204, 0, 0.18), 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 /* Fallback for missing images */
@@ -235,7 +235,7 @@ body {
   background: linear-gradient(135deg, #ffd600, #ffb700);
   color: #111;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 8px 20px;
   border-radius: 50px;
   border: none;
@@ -255,7 +255,7 @@ body {
 .card .info-btn:hover {
   transform: translateX(-50%) scale(1.08);
   background: linear-gradient(135deg, #ffe450, #ffb700);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.4);
 }
 
 /* ========= POPUP ========= */

@@ -3,52 +3,52 @@ const menuData = [
   {
     title: "Antham",
     desc: "Meghalaya — The Rhythm of Rain, The Soul of Nature.",
-    img: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80",
+    img: "https://raw.githubusercontent.com/Ruthramsocialmedia/Meghalaya-State-Profile/main/Images/Anthem.png",
   },
   {
     title: "People & Culture",
     desc: "Where every smile is a story, and every dance a prayer.",
-    img: "https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80",
+    img: "https://raw.githubusercontent.com/Ruthramsocialmedia/Meghalaya-State-Profile/main/Images/PEOPLE AND CULTURE.png",
   },
   {
     title: "Population",
     desc: "Home to more than three million souls, united by nature and tradition.",
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+    img: "https://raw.githubusercontent.com/Ruthramsocialmedia/Meghalaya-State-Profile/main/Images/POPULATION.png",
   },
   {
     title: "Region Style",
     desc: "Three regions, countless wonders — bound by clouds, united by culture.",
-    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    img: "https://raw.githubusercontent.com/Ruthramsocialmedia/Meghalaya-State-Profile/main/Images/RELIGION STYLE.png",
   },
   {
     title: "City Accent",
     desc: "Every street hums with stories; every hilltown echoes with harmony.",
-    img: "https://images.unsplash.com/photo-1581091012184-5c7b6a3d99ec?auto=format&fit=crop&w=800&q=80",
+    img: "https://raw.githubusercontent.com/Ruthramsocialmedia/Meghalaya-State-Profile/main/Images/PEOPLE SPEAK.png",
   },
   {
     title: "Authentic Food",
     desc: "Where food is not cooked, but crafted with love and legacy.",
-    img: "https://images.unsplash.com/photo-1522202195461-764c34d6f9a2?auto=format&fit=crop&w=800&q=80",
+    img: "https://raw.githubusercontent.com/Ruthramsocialmedia/Meghalaya-State-Profile/main/Images/AUTHENTIC FOOD.png",
   },
   {
     title: "GI Codes",
     desc: "Born from the earth, blessed by the clouds — Meghalaya’s gifts to the world.",
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+    img: "https://raw.githubusercontent.com/Ruthramsocialmedia/Meghalaya-State-Profile/main/Images/GEOGRAPHICAL INDICATION.png",
   },
   {
     title: "Weather",
     desc: "Sunlight dances through rain, painting rainbows across the valleys.",
-    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80",
+    img: "https://raw.githubusercontent.com/Ruthramsocialmedia/Meghalaya-State-Profile/main/Images/WEATHER.png",
   },
   {
     title: "How to Reach",
     desc: "All roads that chase the clouds, lead here — to Meghalaya.",
-    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80",
+    img: "https://raw.githubusercontent.com/Ruthramsocialmedia/Meghalaya-State-Profile/main/Images/TRANSPORT.png",
   },
   {
     title: "Audio Tourism",
     desc: "Hear the rhythm of rain, the hum of hills, the heartbeat of its people.",
-    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80",
+    img: "https://raw.githubusercontent.com/Ruthramsocialmedia/Meghalaya-State-Profile/main/Images/Anthem.png",
   },
 ];
 
@@ -83,7 +83,7 @@ menuData.forEach((item, i) => {
 
   const btn = document.createElement("button");
   btn.className = "info-btn";
-  btn.textContent = "View Info";
+  btn.textContent = "View";
   btn.setAttribute("aria-label", `View details about ${item.title}`);
 
   // ===== OPEN POPUP =====
