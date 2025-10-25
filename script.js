@@ -243,3 +243,22 @@ document.addEventListener("keydown", (e) => {
     cardsContainer.scrollBy({ left: 300, behavior: "smooth" });
   }
 });
+
+// ===== OVERALL CLOSE BUTTON =====
+const closeOverall = document.getElementById("closeOverall");
+const showcaseContainer = document.getElementById("showcaseContainer");
+const backgroundGradient = document.querySelector(".background-gradient");
+
+closeOverall.addEventListener("click", () => {
+  showcaseContainer.style.transition = "all 0.6s ease";
+  backgroundGradient.style.transition = "opacity 0.5s ease";
+
+  showcaseContainer.style.opacity = "0";
+  backgroundGradient.style.opacity = "0";
+
+  setTimeout(() => {
+    showcaseContainer.style.display = "none";
+    backgroundGradient.style.display = "none";
+    closeOverall.style.display = "none";
+  }, 600);
+});
