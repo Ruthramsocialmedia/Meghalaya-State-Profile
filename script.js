@@ -1,45 +1,55 @@
 // ===== MENU DATA =====
 const menuData = [
   {
-    title: "Chancellor's Vision",
-    desc: "Building without limits — a future-ready India where innovation thrives, communities flourish, and every dream finds wings.",
-    img: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80"
+    title: "Antham",
+    desc: "Meghalaya — The Rhythm of Rain, The Soul of Nature.",
+    img: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "The Growth Engine",
-    desc: "Driving education and enterprise together — creating opportunities that uplift generations and communities.",
-    img: "https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80"
+    title: "People & Culture",
+    desc: "Where every smile is a story, and every dance a prayer.",
+    img: "https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Transforming Lives",
-    desc: "Education that doesn't stop at classrooms — shaping human stories of success and service across the nation.",
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+    title: "Population",
+    desc: "Home to more than three million souls, united by nature and tradition.",
+    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Legacy of Innovation",
-    desc: "From humble beginnings to global recognition — nurturing a legacy rooted in vision, values, and innovation.",
-    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
+    title: "Region Style",
+    desc: "Three regions, countless wonders — bound by clouds, united by culture.",
+    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "The Power of Education",
-    desc: "Knowledge as the foundation of empowerment — lighting minds and transforming futures.",
-    img: "https://images.unsplash.com/photo-1581091012184-5c7b6a3d99ec?auto=format&fit=crop&w=800&q=80"
+    title: "City Accent",
+    desc: "Every street hums with stories; every hilltown echoes with harmony.",
+    img: "https://images.unsplash.com/photo-1581091012184-5c7b6a3d99ec?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Sustainable Futures",
-    desc: "Building responsibly for tomorrow — integrating sustainability with education and enterprise.",
-    img: "https://images.unsplash.com/photo-1522202195461-764c34d6f9a2?auto=format&fit=crop&w=800&q=80"
+    title: "Authentic Food",
+    desc: "Where food is not cooked, but crafted with love and legacy.",
+    img: "https://images.unsplash.com/photo-1522202195461-764c34d6f9a2?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "The Global Impact",
-    desc: "Extending influence across borders — where Indian education meets global standards.",
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+    title: "GI Codes",
+    desc: "Born from the earth, blessed by the clouds — Meghalaya’s gifts to the world.",
+    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "Inspiring Generations",
-    desc: "A vision carried forward by every student, faculty, and partner — shaping a better India together.",
-    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80"
-  }
+    title: "Weather",
+    desc: "Sunlight dances through rain, painting rainbows across the valleys.",
+    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "How to Reach",
+    desc: "All roads that chase the clouds, lead here — to Meghalaya.",
+    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    title: "Audio Tourism",
+    desc: "Hear the rhythm of rain, the hum of hills, the heartbeat of its people.",
+    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80",
+  },
 ];
 
 // ===== ELEMENTS =====
@@ -59,15 +69,13 @@ menuData.forEach((item, i) => {
   card.className = "card";
   card.setAttribute("data-index", i);
   card.setAttribute("data-title", item.title);
-  
-  if (i === 0) card.classList.add("active");
 
   const img = document.createElement("img");
   img.src = item.img;
   img.alt = item.title;
   img.loading = "lazy";
-  
-  // Handle image loading errors with fallback
+
+  // Handle image load failure
   img.onerror = () => {
     img.style.display = "none";
     card.setAttribute("data-no-image", "true");
@@ -78,7 +86,7 @@ menuData.forEach((item, i) => {
   btn.textContent = "View Info";
   btn.setAttribute("aria-label", `View details about ${item.title}`);
 
-  // Open popup when button clicked
+  // ===== OPEN POPUP =====
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
     popupTitle.textContent = item.title;
@@ -87,21 +95,24 @@ menuData.forEach((item, i) => {
     document.body.style.overflow = "hidden";
   });
 
-  // Activate card on click
+  // ===== ACTIVATE CARD =====
   card.addEventListener("click", () => {
-    document.querySelectorAll(".card").forEach(c => c.classList.remove("active"));
+    document
+      .querySelectorAll(".card")
+      .forEach((c) => c.classList.remove("active"));
     card.classList.add("active");
     title.textContent = item.title;
     desc.textContent = item.desc;
-    
-    // Smooth scroll to center the active card
+
+    // Smooth scroll to center active card
     const cardRect = card.getBoundingClientRect();
     const containerRect = cardsContainer.getBoundingClientRect();
-    const scrollPosition = card.offsetLeft - (containerRect.width / 2) + (cardRect.width / 2);
-    
+    const scrollPosition =
+      card.offsetLeft - containerRect.width / 2 + cardRect.width / 2;
+
     cardsContainer.scrollTo({
       left: scrollPosition,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
 
@@ -110,36 +121,48 @@ menuData.forEach((item, i) => {
   cardsContainer.appendChild(card);
 });
 
+// ===== DEFAULT FIRST CARD LOAD =====
+window.addEventListener("DOMContentLoaded", () => {
+  const firstCard = document.querySelector(".card");
+  if (firstCard) {
+    firstCard.classList.add("active");
+    title.textContent = menuData[0].title;
+    desc.textContent = menuData[0].desc;
+
+    // Center the first card
+    const cardRect = firstCard.getBoundingClientRect();
+    const containerRect = cardsContainer.getBoundingClientRect();
+    const scrollPosition =
+      firstCard.offsetLeft - containerRect.width / 2 + cardRect.width / 2;
+
+    cardsContainer.scrollTo({
+      left: scrollPosition,
+      behavior: "smooth",
+    });
+  }
+});
+
 // ===== SCROLL INDICATORS =====
 scrollLeftBtn.addEventListener("click", () => {
-  cardsContainer.scrollBy({
-    left: -300,
-    behavior: 'smooth'
-  });
+  cardsContainer.scrollBy({ left: -300, behavior: "smooth" });
 });
 
 scrollRightBtn.addEventListener("click", () => {
-  cardsContainer.scrollBy({
-    left: 300,
-    behavior: 'smooth'
-  });
+  cardsContainer.scrollBy({ left: 300, behavior: "smooth" });
 });
 
-// Update scroll indicators visibility
 const updateScrollIndicators = () => {
   const { scrollLeft, scrollWidth, clientWidth } = cardsContainer;
-  
   scrollLeftBtn.style.opacity = scrollLeft > 10 ? "1" : "0.5";
   scrollLeftBtn.style.pointerEvents = scrollLeft > 10 ? "all" : "none";
-  
-  scrollRightBtn.style.opacity = scrollLeft < scrollWidth - clientWidth - 10 ? "1" : "0.5";
-  scrollRightBtn.style.pointerEvents = scrollLeft < scrollWidth - clientWidth - 10 ? "all" : "none";
+  scrollRightBtn.style.opacity =
+    scrollLeft < scrollWidth - clientWidth - 10 ? "1" : "0.5";
+  scrollRightBtn.style.pointerEvents =
+    scrollLeft < scrollWidth - clientWidth - 10 ? "all" : "none";
 };
 
 cardsContainer.addEventListener("scroll", updateScrollIndicators);
 window.addEventListener("resize", updateScrollIndicators);
-
-// Initialize scroll indicators
 setTimeout(updateScrollIndicators, 100);
 
 // ===== POPUP CLOSE =====
@@ -155,7 +178,6 @@ popup.addEventListener("click", (e) => {
   }
 });
 
-// Close popup with Escape key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && popup.classList.contains("active")) {
     popup.classList.remove("active");
@@ -192,7 +214,7 @@ cardsContainer.addEventListener("mousemove", (e) => {
   cardsContainer.scrollLeft = scrollLeft - walk;
 });
 
-// Touch scroll
+// ===== TOUCH SCROLL =====
 let startTouchX = 0;
 let isScrolling = false;
 
@@ -216,8 +238,8 @@ cardsContainer.addEventListener("touchend", () => {
 // ===== KEYBOARD NAVIGATION =====
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") {
-    cardsContainer.scrollBy({ left: -300, behavior: 'smooth' });
+    cardsContainer.scrollBy({ left: -300, behavior: "smooth" });
   } else if (e.key === "ArrowRight") {
-    cardsContainer.scrollBy({ left: 300, behavior: 'smooth' });
+    cardsContainer.scrollBy({ left: 300, behavior: "smooth" });
   }
 });

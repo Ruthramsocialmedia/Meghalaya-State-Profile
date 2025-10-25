@@ -1,10 +1,9 @@
-// ===== Inject Stylesheet from CDN =====
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
-styleLink.href = "https://cdn.jsdelivr.net/gh/Ruthramsocialmedia/Meghalaya-State-Profile@main/style.css";
+styleLink.href =
+  "https://cdn.jsdelivr.net/gh/Ruthramsocialmedia/Meghalaya-State-Profile@main/style.css";
 document.head.appendChild(styleLink);
 
-// ===== Set Page Metadata =====
 document.title = "Founder Menu Showcase";
 document.documentElement.lang = "en";
 const metaCharset = document.createElement("meta");
@@ -16,17 +15,14 @@ metaViewport.name = "viewport";
 metaViewport.content = "width=device-width, initial-scale=1.0";
 document.head.appendChild(metaViewport);
 
-// ===== Background Gradient =====
 const background = document.createElement("div");
 background.className = "background-gradient";
 document.body.appendChild(background);
 
-// ===== Showcase Container =====
 const showcase = document.createElement("div");
 showcase.className = "showcase-container";
 document.body.appendChild(showcase);
 
-// ===== Content Display =====
 const contentDisplay = document.createElement("div");
 contentDisplay.className = "content-display";
 
@@ -46,13 +42,11 @@ desc.textContent =
 contentDisplay.append(label, title, desc);
 showcase.appendChild(contentDisplay);
 
-// ===== Cards Wrapper =====
 const cardsWrapper = document.createElement("div");
 cardsWrapper.className = "cards-wrapper";
 cardsWrapper.id = "cardsWrapper";
 showcase.appendChild(cardsWrapper);
 
-// Scroll Indicators
 const scrollLeft = document.createElement("div");
 scrollLeft.className = "scroll-indicator left";
 scrollLeft.id = "scrollLeft";
@@ -69,7 +63,6 @@ cardsContainer.id = "cardsContainer";
 
 cardsWrapper.append(scrollLeft, cardsContainer, scrollRight);
 
-// ===== Popup =====
 const popup = document.createElement("div");
 popup.className = "text-popup";
 popup.id = "textPopup";
@@ -92,51 +85,49 @@ popupContent.append(closePopup, popupTitle, popupDesc);
 popup.appendChild(popupContent);
 document.body.appendChild(popup);
 
-// ===== Menu Data =====
 const menuData = [
   {
     title: "Chancellor's Vision",
     desc: "Building without limits — a future-ready India where innovation thrives, communities flourish, and every dream finds wings.",
-    img: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80"
+    img: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "The Growth Engine",
     desc: "Driving education and enterprise together — creating opportunities that uplift generations and communities.",
-    img: "https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80"
+    img: "https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Transforming Lives",
     desc: "Education that doesn't stop at classrooms — shaping human stories of success and service across the nation.",
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Legacy of Innovation",
     desc: "From humble beginnings to global recognition — nurturing a legacy rooted in vision, values, and innovation.",
-    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
+    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "The Power of Education",
     desc: "Knowledge as the foundation of empowerment — lighting minds and transforming futures.",
-    img: "https://images.unsplash.com/photo-1581091012184-5c7b6a3d99ec?auto=format&fit=crop&w=800&q=80"
+    img: "https://images.unsplash.com/photo-1581091012184-5c7b6a3d99ec?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Sustainable Futures",
     desc: "Building responsibly for tomorrow — integrating sustainability with education and enterprise.",
-    img: "https://images.unsplash.com/photo-1522202195461-764c34d6f9a2?auto=format&fit=crop&w=800&q=80"
+    img: "https://images.unsplash.com/photo-1522202195461-764c34d6f9a2?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "The Global Impact",
     desc: "Extending influence across borders — where Indian education meets global standards.",
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Inspiring Generations",
     desc: "A vision carried forward by every student, faculty, and partner — shaping a better India together.",
-    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80"
-  }
+    img: "https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=80",
+  },
 ];
 
-// ===== Render Cards =====
 menuData.forEach((item, i) => {
   const card = document.createElement("div");
   card.className = "card";
@@ -167,14 +158,17 @@ menuData.forEach((item, i) => {
   });
 
   card.addEventListener("click", () => {
-    document.querySelectorAll(".card").forEach(c => c.classList.remove("active"));
+    document
+      .querySelectorAll(".card")
+      .forEach((c) => c.classList.remove("active"));
     card.classList.add("active");
     title.textContent = item.title;
     desc.textContent = item.desc;
 
     const cardRect = card.getBoundingClientRect();
     const containerRect = cardsContainer.getBoundingClientRect();
-    const scrollPosition = card.offsetLeft - (containerRect.width / 2) + (cardRect.width / 2);
+    const scrollPosition =
+      card.offsetLeft - containerRect.width / 2 + cardRect.width / 2;
     cardsContainer.scrollTo({ left: scrollPosition, behavior: "smooth" });
   });
 
@@ -182,7 +176,6 @@ menuData.forEach((item, i) => {
   cardsContainer.appendChild(card);
 });
 
-// ===== Scroll Controls =====
 scrollLeft.addEventListener("click", () => {
   cardsContainer.scrollBy({ left: -300, behavior: "smooth" });
 });
@@ -193,13 +186,13 @@ scrollRight.addEventListener("click", () => {
 const updateScrollIndicators = () => {
   const { scrollLeft: left, scrollWidth, clientWidth } = cardsContainer;
   scrollLeft.style.opacity = left > 10 ? "1" : "0.5";
-  scrollRight.style.opacity = left < scrollWidth - clientWidth - 10 ? "1" : "0.5";
+  scrollRight.style.opacity =
+    left < scrollWidth - clientWidth - 10 ? "1" : "0.5";
 };
 cardsContainer.addEventListener("scroll", updateScrollIndicators);
 window.addEventListener("resize", updateScrollIndicators);
 setTimeout(updateScrollIndicators, 100);
 
-// ===== Popup Close Events =====
 closePopup.addEventListener("click", () => {
   popup.classList.remove("active");
   document.body.style.overflow = "auto";
@@ -217,16 +210,23 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// ===== Drag & Swipe Scroll =====
-let isDown = false, startX, scrollStart;
+let isDown = false,
+  startX,
+  scrollStart;
 cardsContainer.addEventListener("mousedown", (e) => {
   isDown = true;
   cardsContainer.style.cursor = "grabbing";
   startX = e.pageX - cardsContainer.offsetLeft;
   scrollStart = cardsContainer.scrollLeft;
 });
-cardsContainer.addEventListener("mouseleave", () => { isDown = false; cardsContainer.style.cursor = "grab"; });
-cardsContainer.addEventListener("mouseup", () => { isDown = false; cardsContainer.style.cursor = "grab"; });
+cardsContainer.addEventListener("mouseleave", () => {
+  isDown = false;
+  cardsContainer.style.cursor = "grab";
+});
+cardsContainer.addEventListener("mouseup", () => {
+  isDown = false;
+  cardsContainer.style.cursor = "grab";
+});
 cardsContainer.addEventListener("mousemove", (e) => {
   if (!isDown) return;
   e.preventDefault();
@@ -235,9 +235,12 @@ cardsContainer.addEventListener("mousemove", (e) => {
   cardsContainer.scrollLeft = scrollStart - walk;
 });
 
-// Touch Scroll
-let startTouchX = 0, isScrolling = false;
-cardsContainer.addEventListener("touchstart", (e) => { startTouchX = e.touches[0].pageX; isScrolling = true; });
+let startTouchX = 0,
+  isScrolling = false;
+cardsContainer.addEventListener("touchstart", (e) => {
+  startTouchX = e.touches[0].pageX;
+  isScrolling = true;
+});
 cardsContainer.addEventListener("touchmove", (e) => {
   if (!isScrolling) return;
   const touchX = e.touches[0].pageX;
@@ -245,4 +248,6 @@ cardsContainer.addEventListener("touchmove", (e) => {
   cardsContainer.scrollLeft += move * 1.2;
   startTouchX = touchX;
 });
-cardsContainer.addEventListener("touchend", () => { isScrolling = false; });
+cardsContainer.addEventListener("touchend", () => {
+  isScrolling = false;
+});
